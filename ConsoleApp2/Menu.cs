@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +33,7 @@ namespace ConsoleApp2
                 Console.WriteLine("| Historial de giros.........................................................3|");
                 Console.WriteLine("| Balance dinero.............................................................4|");
                 Console.WriteLine("| Ver tablero................................................................5|");
+                Console.WriteLine("| Elementos repetidos........................................................6|");
                 Console.WriteLine("| Salirse....................................................................0|");
                 Console.WriteLine("|_____________________________________________________________________________|");
                 Console.WriteLine("\n");
@@ -82,6 +83,7 @@ namespace ConsoleApp2
                     }
                     else if( opcion == 4) { Dinero.imprimirResultados(); }
                     else if (opcion == 5) { ruleta.imprimirTablero(0); }
+                    else if (opcion == 6) { ruleta.ElementoRepetido(); }
                     else if (opcion == 0) { salir = false; }
                 }
                 else
@@ -103,3 +105,4 @@ namespace ConsoleApp2
         }
     }
 }
+
