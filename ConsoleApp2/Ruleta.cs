@@ -9,7 +9,7 @@ namespace ConsoleApp2
     internal class Ruleta
     {
         List<String> GIROS = new List<String>();
-        List<int> valores = new List<int>();
+        static List<int> valores = new List<int>();
         List<int>NumerosNegros = new List<int> {2,4,6,8,10,11,13,15,17,20,22,24,26,28,29,31,33,35};
         List<int> NumerosRojos = new List<int> { 1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36 };
 
@@ -64,6 +64,7 @@ namespace ConsoleApp2
 
             EsPar(dado);
             EsBolaNegra(dado);
+            valores.Add(dado);
             return dado;
         }
 
@@ -244,14 +245,15 @@ namespace ConsoleApp2
             Console.WriteLine("Cantidad de resultados Impares: " + Impar);
             ElementoRepetido();
         }
+
         public void ElementoRepetido()
         {
             bool repetidos = false;
-            for(var x = 0; x< valores.Count; x++)
+            for (var x = 0; x < valores.Count; x++)
             {
                 int a = valores[x];
                 int c = x + 1;
-                for(int y = c; y <valores.Count; y++)
+                for (int y = c; y < valores.Count; y++)
                 {
                     int b = valores[y];
                     if (a == b)
